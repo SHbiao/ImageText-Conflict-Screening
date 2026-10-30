@@ -84,7 +84,7 @@ The unchanged model bundle is 23,173,918 bytes. SHA-256:
 
 ## Citation
 
-Shengqi Zhou, Wenxiang Zhu, Zhentao Cang, and Yuhan Zhu. **From Pairwise Signals to Screening Decisions: Supervised Readouts and Proxy Misalignment in Image–Text Conflict Detection.** Unpublished manuscript prepared for Multimedia Systems. See `CITATION.cff` for author and software citation metadata.
+**From Pairwise Signals to Screening Decisions: Supervised Readouts and Proxy Misalignment in Image–Text Conflict Detection.** Unpublished manuscript prepared for Multimedia Systems. See `CITATION.cff` for software citation metadata.
 
 Repository maintainer: shbiao <shbiao@stu.nepu.edu.cn> ([SHbiao](https://github.com/SHbiao)).
 

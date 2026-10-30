@@ -1,32 +1,14 @@
 cff-version: 1.2.0
-message: "Please cite the associated unpublished manuscript and this software release."
-title: "From Pairwise Signals to Screening Decisions: Supervised Readouts and Proxy Misalignment in Image–Text Conflict Detection"
+message: For the manuscript, cite the title listed in the README. This file describes the software release.
+title: 'From Pairwise Signals to Screening Decisions: Supervised Readouts and Proxy Misalignment in Image–Text Conflict
+  Detection'
 type: software
 version: 0.1.0
 authors:
-  - family-names: Zhou
-    given-names: Shengqi
-  - family-names: Zhu
-    given-names: Wenxiang
-  - family-names: Cang
-    given-names: Zhentao
-  - family-names: Zhu
-    given-names: Yuhan
+- name: ImageText-Conflict-Screening project
 contact:
-  - name: shbiao
-    email: shbiao@stu.nepu.edu.cn
-repository-code: "https://github.com/SHbiao/ImageText-Conflict-Screening"
-url: "https://github.com/SHbiao/ImageText-Conflict-Screening"
+- name: shbiao
+  email: shbiao@stu.nepu.edu.cn
+repository-code: https://github.com/SHbiao/ImageText-Conflict-Screening
+url: https://github.com/SHbiao/ImageText-Conflict-Screening
 license: MIT
-preferred-citation:
-  type: unpublished
-  title: "From Pairwise Signals to Screening Decisions: Supervised Readouts and Proxy Misalignment in Image–Text Conflict Detection"
-  authors:
-    - family-names: Zhou
-      given-names: Shengqi
-    - family-names: Zhu
-      given-names: Wenxiang
-    - family-names: Cang
-      given-names: Zhentao
-    - family-names: Zhu
-      given-names: Yuhan
