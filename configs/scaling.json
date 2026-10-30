@@ -1,0 +1,24 @@
+{
+  "seeds": [
+    2026102813,
+    2026102814,
+    2026102815,
+    2026102816,
+    2026102817
+  ],
+  "images": [
+    256,
+    512,
+    1024,
+    1536
+  ],
+  "kinds": [
+    "linear_h",
+    "mlp_h",
+    "residual_hz",
+    "linear_hz"
+  ],
+  "updates": 1280,
+  "batch_image_groups": 64,
+  "selection": "fixed_steps"
+}

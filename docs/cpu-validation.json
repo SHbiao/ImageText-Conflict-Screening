@@ -1,0 +1,19 @@
+{
+  "status": "PASSED",
+  "checks": [
+    "30 tied-score ROC/pAUC fixtures against scikit-learn; strict threshold; qualified pairs",
+    "both adapter files readable on CPU; all tensors finite; registry hashes match"
+  ],
+  "replayed_conditions": 6300,
+  "max_absolute_score_errors": {
+    "Classification-z": 0.0,
+    "Linear-1024": 0.0,
+    "Residual-1024": 4.76837158203125e-07,
+    "Residual-1536": 4.76837158203125e-07,
+    "Adapted-oldHead": 4.76837158203125e-07,
+    "Adapted-joint": 4.76837158203125e-07
+  },
+  "GPU_calls": 0,
+  "training_runs": 0,
+  "GPU_portability": "source inspected; no new GPU inference/training run"
+}

@@ -1,0 +1,8 @@
+{
+  "seed": 2026102813,
+  "images": 1024,
+  "kind": "linear_h",
+  "objective": "bce",
+  "updates": 1280,
+  "selection": "matched_epochs"
+}

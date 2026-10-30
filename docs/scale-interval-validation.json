@@ -1,0 +1,36 @@
+{
+  "model_a": "E1",
+  "model_b": "E0",
+  "conditions": 1024,
+  "images": 512,
+  "repetitions": 10000,
+  "seed": 2026102820,
+  "interval_level": 0.975,
+  "thresholds_refit": false,
+  "differences": {
+    "pAUC10": {
+      "point": 0.02600097656249989,
+      "CI_low": 0.003333854675292859,
+      "CI_high": 0.04714221954345704,
+      "valid_draws": 10000
+    },
+    "ROC_Recall5": {
+      "point": 0.01953125,
+      "CI_low": -0.021484375,
+      "CI_high": 0.078125,
+      "valid_draws": 10000
+    },
+    "Recall": {
+      "point": 0.03125,
+      "CI_low": 0.0078125,
+      "CI_high": 0.0546875,
+      "valid_draws": 10000
+    },
+    "FAR": {
+      "point": 0.001953125,
+      "CI_low": -0.009765625,
+      "CI_high": 0.013671875,
+      "valid_draws": 10000
+    }
+  }
+}

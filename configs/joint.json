@@ -1,0 +1,10 @@
+{
+  "seed": 2026102813,
+  "epochs": 3,
+  "accumulation_conditions": 32,
+  "evaluate_every_steps": 48,
+  "lora_lr": 1e-05,
+  "head_lr": 0.0001,
+  "weight_decay": 0.0,
+  "gradient_clip": 1.0
+}

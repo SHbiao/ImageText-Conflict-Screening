@@ -1,0 +1,48 @@
+{
+  "seed": 2026102809,
+  "conditions": 512,
+  "manifest_schedule_frozen": true,
+  "prompt_template": "Compare the image and the caption as factual claims. Return exactly one JSON object {\"decision\":\"CONFLICT or NO_CONFLICT or INSUFFICIENT\",\"reason\":\"brief explanation based on the input evidence\"}, without Markdown. CONFLICT requires an actual incompatible fact about the same instance and comparable scope. Missing mention, uncertain detection, or information the image cannot observe is not a contradiction. Use NO_CONFLICT only when the caption claims can be adequately assessed and have no conflict. Otherwise use INSUFFICIENT. Caption: CAPTION_JSON",
+  "aux_prompt": "Read the caption as a source document. Copy verbatim the source phrase occupying the marked character span. The image is context, not permission to rewrite the caption. Caption: CAPTION_JSON. Source character span [START, END): copy only that phrase.",
+  "training": {
+    "arms": [
+      "classification",
+      "paired_hard",
+      "claim_preservation"
+    ],
+    "quantization": "NF4 double quantization, BF16 compute",
+    "vision_frozen": true,
+    "lora_r": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "targets": [
+      "q_proj",
+      "v_proj"
+    ],
+    "epochs": 1,
+    "classification_conditions": 512,
+    "microbatch": 1,
+    "gradient_accumulation": 8,
+    "optimizer_steps": 64,
+    "learning_rate": 0.0001,
+    "max_grad_norm": 1.0,
+    "weight_decay": 0.0,
+    "optimizer": "AdamW",
+    "gradient_checkpointing": true,
+    "classification_loss": "MEAN_CE_ON_DECISION_VALUE_TOKENS_ONLY",
+    "auxiliary": "SOURCE_QUOTE_PAIRWISE_SEQUENCE_PREFERENCE",
+    "aux_lambda": 0.2,
+    "aux_margin": 0.2,
+    "aux_loss": "softplus(margin + mean_logp(alternative_quote) - mean_logp(source_quote))",
+    "controls_auxiliary_forwards": "SAME_FORWARD_COUNT_ALL_ARMS; lambda=0 for controls",
+    "hard_condition_weights": {
+      "normal": 1.0,
+      "conflict": 1.5
+    },
+    "shuffle": "classification random conditions; paired_hard and claim_preservation identical shuffled image pairs, normal/conflict alternating seeded order",
+    "max_pixels": 262144,
+    "min_pixels": 4096,
+    "precision": "4bit weights, BF16 compute, FP32 LoRA optimizer",
+    "CPU_offload": false
+  }
+}

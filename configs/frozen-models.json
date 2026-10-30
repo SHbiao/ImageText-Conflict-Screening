@@ -1,0 +1,73 @@
+{
+  "version": "v1",
+  "base_model": "Qwen/Qwen3-VL-4B-Instruct",
+  "min_pixels": 4096,
+  "max_pixels": 262144,
+  "hidden_dim": 2560,
+  "prefix": "{\"decision\":\"",
+  "quantization": "NF4; double quantization; BF16 compute",
+  "models": {
+    "Classification-z": {
+      "adapter_arm": "original",
+      "form": "z",
+      "threshold": 1.875037670135498
+    },
+    "Linear-1024": {
+      "adapter_arm": "original",
+      "form": "linear",
+      "threshold": 1.2244542837142944,
+      "checkpoint": "readouts/Linear-1024.pt",
+      "checkpoint_sha256": "f9a9efe1509eb12249fb5e00bc4ec95f0a88fda35a8b33cf5c5c04fe8e83d6a1",
+      "standardizer": "readouts/Linear-1024-scale.npz",
+      "standardizer_sha256": "eea4c3f574e81fd010c33cfe01a46a934fe1ea563eba23943e18f5640ce83399"
+    },
+    "Residual-1024": {
+      "adapter_arm": "original",
+      "form": "residual",
+      "threshold": 1.3609859943389893,
+      "checkpoint": "readouts/Residual-1024.pt",
+      "checkpoint_sha256": "00a98763b778fa60ba67f25ade6ddc824618e1114c9c7d7bfb50dd66fde5ed3c",
+      "standardizer": "readouts/Residual-1024-scale.npz",
+      "standardizer_sha256": "eea4c3f574e81fd010c33cfe01a46a934fe1ea563eba23943e18f5640ce83399"
+    },
+    "Residual-1536": {
+      "adapter_arm": "original",
+      "form": "residual",
+      "threshold": 1.4768120050430298,
+      "checkpoint": "readouts/Residual-1536.pt",
+      "checkpoint_sha256": "20525d301674a919ba36057417f373f327ce1971545e30ef0071114258152a40",
+      "standardizer": "readouts/Residual-1536-scale.npz",
+      "standardizer_sha256": "a59d83139439f5ae9b294114fde87a52e79d90b288a53eeeaf7d0d277b71a60e"
+    },
+    "Adapted-oldHead": {
+      "adapter_arm": "adapted",
+      "form": "residual",
+      "threshold": 1.5553530305624008,
+      "checkpoint": "readouts/Adapted-oldHead.pt",
+      "checkpoint_sha256": "20525d301674a919ba36057417f373f327ce1971545e30ef0071114258152a40",
+      "standardizer": "readouts/Adapted-oldHead-scale.npz",
+      "standardizer_sha256": "a59d83139439f5ae9b294114fde87a52e79d90b288a53eeeaf7d0d277b71a60e"
+    },
+    "Adapted-joint": {
+      "adapter_arm": "adapted",
+      "form": "residual",
+      "threshold": 1.6555397510528564,
+      "checkpoint": "readouts/Adapted-joint.pt",
+      "checkpoint_sha256": "bc553aec79344fda01b8346441f461ff3f52611dd6f7fbf9b7c23a33bc74babb",
+      "standardizer": "readouts/Adapted-joint-scale.npz",
+      "standardizer_sha256": "a59d83139439f5ae9b294114fde87a52e79d90b288a53eeeaf7d0d277b71a60e"
+    }
+  },
+  "adapters": {
+    "original": {
+      "adapter_config.json": "2344554e111096f91e204f6aa8118578ca3853d26326b94aa51afe3cf68f0cc0",
+      "adapter_model.safetensors": "5bb79a0ca961eff556dc8011046b6857d853c70f5f320d9a64878976ac9cdc91"
+    },
+    "adapted": {
+      "adapter_config.json": "a54e9bf6f58ba2c7ba8cf57f2623006fade25dbf24e5978b9bbc1c6d8119372c",
+      "adapter_model.safetensors": "02084741c372f9ffbb54be0de925b884191c3f7c0240e6c62a81fcf6411fdfe7"
+    }
+  },
+  "prompt_template": "Compare the image and the caption as factual claims. Return exactly one JSON object {\"decision\":\"CONFLICT or NO_CONFLICT or INSUFFICIENT\",\"reason\":\"brief explanation based on the input evidence\"}, without Markdown. CONFLICT requires an actual incompatible fact about the same instance and comparable scope. Missing mention, uncertain detection, or information the image cannot observe is not a contradiction. Use NO_CONFLICT only when the caption claims can be adequately assessed and have no conflict. Otherwise use INSUFFICIENT. Caption: CAPTION_JSON",
+  "assets_distribution": "Separate versioned model assets; no base weights in Dataset"
+}

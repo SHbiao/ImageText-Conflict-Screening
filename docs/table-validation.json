@@ -1,0 +1,30 @@
+{
+  "status": "PASSED",
+  "reconstructed": [
+    {
+      "table": "matched_objectives.csv",
+      "models": 12
+    },
+    {
+      "table": "simple_heads.csv",
+      "models": 9
+    },
+    {
+      "table": "scale_confirmation.csv",
+      "models": 5
+    },
+    {
+      "table": "adaptation_confirmation.csv",
+      "models": 3
+    },
+    {
+      "table": "architecture_scaling.csv.gz",
+      "models": 160
+    }
+  ],
+  "human_metric_rows": 72,
+  "sugarcrepe_metric_rows": 32,
+  "max_human_numeric_error": 2.220446049250313e-16,
+  "GPU_calls": 0,
+  "training_runs": 0
+}
